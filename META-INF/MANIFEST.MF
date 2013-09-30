@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Lohn24 PlugIn
+Bundle-SymbolicName: de.lohn24.blbanking;singleton:=true
+Bundle-Version: 1.0
+Bundle-Activator: de.lohn24.blbanking.Activator
+Bundle-Localization: plugin
+Require-Bundle: org.eclipse.ui,
+ de.businesslogics.banking.transfer;bundle-version="1.9.23",
+ de.businesslogics.banking.application
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-Vendor: Lohn24.de
