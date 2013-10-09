@@ -214,12 +214,13 @@ public class LoginDialog extends TitleAreaDialog {
 
         if ((mandants != null) && (mandants.length() > 0)) {
             JSONArray names = mandants.getJSONArray("name");
+            JSONArray ids = mandants.getJSONArray("mandant");
             final String[] p = new String[names.length()];
             for (int i = 0; i < names.length(); i++) {
-                p[i] = names.getString(i);
+                p[i] = ids.getString(i) + ' ' + names.getString(i);
             }
             // If there are only a few mandants, we save one click.
-            if (p.length <= 0) {
+            if (p.length <= 5) {
                 MessageDialog d = new MessageDialog(getParentShell(),
                         Messages.MANDANT_TITLE, null, Messages.MANDANT_MESSAGE,
                         MessageDialog.QUESTION, p, 0);
