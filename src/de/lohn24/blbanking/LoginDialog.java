@@ -212,7 +212,8 @@ public class LoginDialog extends TitleAreaDialog {
             }
         });
 
-        if ((mandants != null) && (mandants.length() > 0)) {
+        // Open dialog only if there is more than one mandant.
+        if ((mandants != null) && (mandants.length() > 1)) {
             JSONArray names = mandants.getJSONArray("name");
             JSONArray ids = mandants.getJSONArray("mandant");
             final String[] p = new String[names.length()];
