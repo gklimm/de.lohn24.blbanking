@@ -1,0 +1,24 @@
+<project name="de.lohn24.blbanking"
+         default="jar"
+         xmlns:artifact="urn:maven-artifact-ant">
+
+  <!-- We read the manifest to get the version number -->
+  <property file="META-INF/MANIFEST.MF" prefix="manifest" />
+
+  <!-- Default target to build the jar -->
+  <target name="jar" description="Build the JAR. This is the default target.">
+  	<mkdir dir="bin"/>
+  	<javac srcdir="src" destdir="bin" target="1.5" source="1.5">
+  		<classpath>
+  	      <fileset dir="lib"><include name="**/*.jar"/></fileset>
+  		</classpath>
+  	</javac>
+  	<jar destfile="de.lohn24.blbanking.${manifest.Bundle-Version}.jar"
+         manifest="META-INF/MANIFEST.MF">
+  	  <fileset dir="bin"/>
+  	  <fileset dir="." includes="icons/** plugin.xml plugin.properties"/>
+  	</jar>
+  </target>
+
+  
+</project>
