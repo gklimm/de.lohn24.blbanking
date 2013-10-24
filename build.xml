@@ -15,7 +15,8 @@
   	</javac>
   	<jar destfile="de.lohn24.blbanking.${manifest.Bundle-Version}.jar"
          manifest="META-INF/MANIFEST.MF">
-  	  <fileset dir="bin"/>
+      <fileset dir="bin"/>
+      <fileset dir="src" includes="**/*.properties" />
   	  <fileset dir="." includes="icons/** plugin.xml plugin.properties"/>
   	</jar>
   </target>
